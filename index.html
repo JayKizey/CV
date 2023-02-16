@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+   href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+   rel="stylesheet"
+  />
+  <link
+   rel="stylesheet"
+   href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
+  />
+  <title>Document</title>
+  <style>
+   /* 1 block = 40px */
+   * {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   }
+
+   b {
+    font-weight: bold;
+   }
+
+   body {
+    --bg-primary: #e7e7e9;
+    --bg-secondary: #0f2033;
+    --txt-primary: #0f2033;
+    --txt-secondary: #efeff3;
+    background: #efeff3;
+   }
+
+   h1 {
+    font-size: 40px;
+   }
+
+   h2 {
+    font-size: 24px;
+   }
+
+   h3 {
+    font-size: 20px;
+   }
+
+   p {
+    font-size: 14px;
+   }
+
+   .cv {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    max-width: 1160px;
+   }
+
+   .cv-child {
+    display: flex;
+    flex-direction: column;
+    padding-top: 40px;
+   }
+
+   .cv-child:first-child {
+    background: var(--bg-secondary);
+    min-width: 380px;
+    width: 380px;
+    height: auto;
+    color: var(--txt-secondary);
+   }
+
+   .cv-child:last-child {
+    background-color: var(--bg-primary);
+    width: 100%;
+   }
+
+   .hexagon {
+    -webkit-clip-path: polygon(
+     50% 0,
+     100% 25%,
+     100% 75%,
+     50% 100%,
+     0 75%,
+     0 25%
+    );
+   }
+
+   .cv-top {
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    height: 150px; /* width * 0.866 */
+    width: 130px;
+    background: var(--txt-secondary);
+    box-sizing: border-box;
+   }
+
+   .cv-top-avatar {
+    position: absolute;
+    background-color: orange; /*color of the main-background*/
+    top: 2px; /* equal to border thickness */
+    left: 2px; /* equal to border thickness */
+    height: 146px; /* container height - (border thickness * 2) */
+    width: 126px; /* container height - (border thickness * 2) */
+   }
+
+   .cv-top img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+   }
+
+   .cv-name {
+    background-color: var(--bg-secondary);
+    text-align: center;
+   }
+
+   .cv-item {
+    padding: 40px 0 40px 40px;
+   }
+
+   .cv-title {
+    margin-top: 30px;
+    display: -webkit-inline-box;
+    width: 100%;
+    padding: 5px;
+   }
+
+   .cv-title .las {
+    color: var(--txt-secondary);
+    font-size: 28px;
+    line-height: 32px;
+   }
+
+   .cv-title .lab {
+    color: var(--bg-secondary);
+    font-size: 28px;
+    line-height: 32px;
+   }
+
+   .cv-title h3 {
+    margin-left: 8px;
+    margin-right: 10px;
+   }
+
+   .cv-icon-hexagon {
+    text-align: center;
+    line-height: 32px;
+    position: relative;
+    z-index: 0;
+
+    border-style: solid;
+    border-color: #fff;
+    border-width: 3px;
+    width: 56px;
+    height: 32px;
+    border-top: none;
+    border-bottom: none;
+   }
+
+   .cv-icon-hexagon:before,
+   .cv-icon-hexagon::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -2px;
+    z-index: -1;
+
+    border-style: solid;
+    border-color: #fff;
+    border-width: 3px;
+    width: 56px;
+    height: 32px;
+    border-top: none;
+    border-bottom: none;
+
+    box-sizing: border-box;
+   }
+
+   .cv-icon-hexagon:before {
+    transform: rotate(60deg);
+   }
+
+   .cv-icon-hexagon::after {
+    transform: rotate(-60deg);
+   }
+
+   .cv-line {
+    height: 3px;
+    width: 100%;
+    background: var(--txt-secondary);
+    margin: auto;
+   }
+
+   .cv-item p {
+    padding: 15px;
+    margin-top: 20px;
+   }
+
+   .cv-main {
+    margin-top: 30px;
+   }
+
+   .cv-icon-dark,
+   .cv-icon-dark::after,
+   .cv-icon-dark::before {
+    background-color: var(--bg-primary);
+    margin-right: 20px;
+    border-color: transparent;
+   }
+
+   .cv-icon-dark .las {
+    color: var(--bg-secondary);
+   }
+
+   .progress-bar {
+    height: 15px;
+    width: 120px;
+    background: var(--bg-secondary);
+    margin: auto;
+    border: 2px solid var(--bg-primary);
+    border-radius: 5px;
+    display: inline-block;
+    float: right;
+    position: relative;
+   }
+
+   .progress-bar::before {
+    content: "";
+    height: 11px;
+    width: 80%;
+    background: var(--bg-primary);
+    position: absolute;
+    top: 0;
+    left: 0;
+   }
+
+   .cv-item ul {
+    padding: 0 20px;
+    margin-top: 40px;
+   }
+   .cv-item li {
+    margin: auto;
+   }
+  </style>
+ </head>
+ <body>
+  <div class="cv">
+   <div class="cv-child">
+    <div class="cv-top hexagon">
+     <div class="cv-top-avatar hexagon">
+      <img
+       src="https://img5.thuthuatphanmem.vn/uploads/2021/09/04/anh-meo-bua-hai-huoc-dep-nhat_114725151.jpg"
+       alt=""
+       class="hexagon"
+      />
+     </div>
+    </div>
+    <div class="cv-name">
+     <h1>TRINH LONG VU</h1>
+     <h2>Web Developer</h2>
+    </div>
+
+    <div class="cv-item">
+     <div class="cv-title">
+      <div class="cv-icon-hexagon">
+       <i class="las la-file-alt"></i>
+      </div>
+      <h3>PROFILE</h3>
+      <div class="cv-line"></div>
+     </div>
+     <p>
+      <b>Lorem ipsum dolor</b> sit amet consectetur adipisicing elit. Minima
+      minus provident obcaecati necessitatibus excepturi animi dolore, nisi
+      repudiandae aspernatur quos assumenda perspiciatis! Obcaecati cum
+     </p>
+    </div>
+
+    <div class="cv-item">
+     <div class="cv-title">
+      <div class="cv-icon-hexagon">
+       <i class="las la-user"></i>
+      </div>
+      <h3>CONTACT ME</h3>
+      <div class="cv-line"></div>
+     </div>
+     <div class="cv-main">
+      <div class="cv-title">
+       <div class="cv-icon-hexagon cv-icon-dark">
+        <i class="las la-phone"></i>
+       </div>
+       +555 555 5555
+      </div>
+      <div class="cv-title">
+       <div class="cv-icon-hexagon cv-icon-dark">
+        <i class="las la-envelope"></i>
+       </div>
+       abc@abc.com
+      </div>
+      <div class="cv-title">
+       <div class="cv-icon-hexagon cv-icon-dark">
+        <i class="las la-globe"></i>
+       </div>
+       www.website.com
+      </div>
+      <div class="cv-title">
+       <div class="cv-icon-hexagon cv-icon-dark">
+        <i class="las la-map-marker"></i>
+       </div>
+       51B Phu Lam, Ward 9, Dist.6
+      </div>
+     </div>
+    </div>
+
+    <div class="cv-item">
+     <div class="cv-title">
+      <div class="cv-icon-hexagon">
+       <i class="las la-chart-pie"></i>
+      </div>
+      <h3>PERSONAL SKILLS</h3>
+      <div class="cv-line"></div>
+     </div>
+     <ul class="cv-main">
+      <li class="cv-list">
+       INNOVATE
+       <div class="progress-bar"></div>
+      </li>
+      <li class="cv-list">
+       CREATIVE
+       <div class="progress-bar"></div>
+      </li>
+      <li class="cv-list">
+       TEAMWORK
+       <div class="progress-bar"></div>
+      </li>
+      <li class="cv-list">
+       HOBBIES
+       <div class="progress-bar"></div>
+      </li>
+     </ul>
+    </div>
+
+    <div class="cv-item">
+     <div class="cv-title">
+      <div class="cv-icon-hexagon">
+       <i class="las la-user"></i>
+      </div>
+      <h3>CONNECT</h3>
+      <div class="cv-line"></div>
+     </div>
+     <div class="cv-main">
+      <div class="cv-title">
+       <div class="cv-icon-hexagon cv-icon-dark">
+        <i class="lab la-linkedin-in"></i>
+       </div>
+       linkedin.com/username
+      </div>
+      <div class="cv-title">
+       <div class="cv-icon-hexagon cv-icon-dark">
+        <i class="lab la-twitter"></i>
+       </div>
+       twitter.com/username
+      </div>
+      <div class="cv-title">
+       <div class="cv-icon-hexagon cv-icon-dark">
+        <i class="lab la-behance"></i>
+       </div>
+       behance.com/username
+      </div>
+      <div class="cv-title">
+       <div class="cv-icon-hexagon cv-icon-dark">
+        <i class="lab la-dribbble"></i>
+       </div>
+       dribbble.com/username
+      </div>
+     </div>
+    </div>
+    <!-- end -->
+   </div>
+   <div class="cv-child"></div>
+  </div>
+ </body>
+</html>
