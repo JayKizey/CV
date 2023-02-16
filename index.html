@@ -14,7 +14,7 @@
    rel="stylesheet"
    href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
   />
-  <title>Document</title>
+  <title>Cv</title>
   <style>
    /* 1 block = 40px */
    * {
@@ -40,18 +40,36 @@
 
    h1 {
     font-size: 40px;
+    text-transform: uppercase;
    }
 
    h2 {
     font-size: 24px;
+    text-transform: uppercase;
    }
 
    h3 {
+    font-size: 20px;
+    text-transform: uppercase;
+   }
+
+   h3 b {
+    font-weight: bold;
     font-size: 20px;
    }
 
    p {
     font-size: 14px;
+   }
+
+   .mt-40 {
+    margin-top: 40px;
+   }
+
+   .flex-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
    }
 
    .cv {
@@ -64,10 +82,10 @@
    .cv-child {
     display: flex;
     flex-direction: column;
-    padding-top: 40px;
    }
 
    .cv-child:first-child {
+    padding-top: 40px;
     background: var(--bg-secondary);
     min-width: 380px;
     width: 380px;
@@ -130,7 +148,7 @@
     margin-top: 30px;
     display: -webkit-inline-box;
     width: 100%;
-    padding: 5px;
+    padding: 5px 0;
    }
 
    .cv-title .las {
@@ -199,7 +217,7 @@
     margin: auto;
    }
 
-   .cv-item p {
+   .cv-item > p {
     padding: 15px;
     margin-top: 20px;
    }
@@ -228,8 +246,8 @@
     border: 2px solid var(--bg-primary);
     border-radius: 5px;
     display: inline-block;
-    float: right;
     position: relative;
+    margin: 0 10px;
    }
 
    .progress-bar::before {
@@ -242,18 +260,82 @@
     left: 0;
    }
 
+   .progress-bar.percent-80:before {
+    width: 80%;
+   }
+
+   .progress-bar.percent-70:before {
+    width: 70%;
+   }
+
+   .progress-bar.percent-60:before {
+    width: 60%;
+   }
+
+   .progress-bar.percent-50:before {
+    width: 50%;
+   }
+
+   .progress-bar.percent-90:before {
+    width: 90%;
+   }
+
+   .progress-bar.percent-100:before {
+    width: 100%;
+   }
+
    .cv-item ul {
     padding: 0 20px;
     margin-top: 40px;
    }
-   .cv-item li {
+   .cv-item > li {
     margin: auto;
+   }
+
+   .cv-item-dark .cv-icon-hexagon,
+   .cv-item-dark .cv-icon-hexagon:after,
+   .cv-item-dark .cv-icon-hexagon:before {
+    border-color: var(--bg-secondary);
+   }
+
+   .cv-item-dark .cv-title i {
+    color: var(--bg-secondary);
+   }
+
+   .cv-item-dark .cv-title .cv-line {
+    background: var(--bg-secondary);
+    max-width: 588px;
+   }
+
+   .cv-item-dark .cv-title {
+    display: flex;
+    align-items: center;
+   }
+
+   .cv-item-dark .cv-title-name {
+    white-space: nowrap;
+   }
+
+   .cv-item-dark .cv-main {
+    padding-left: 50px;
+   }
+
+   .cv-item-dark .progress-bar {
+    border-color: var(--bg-secondary);
+    background: var(--bg-primary);
+   }
+
+   .cv-item-dark .progress-bar:before {
+    background: var(--bg-secondary);
    }
   </style>
  </head>
  <body>
+  <!-- BEGIN CV -->
   <div class="cv">
+   <!--BEGIN LEFT-->
    <div class="cv-child">
+    <!-- BEGIN TOP -->
     <div class="cv-top hexagon">
      <div class="cv-top-avatar hexagon">
       <img
@@ -267,7 +349,9 @@
      <h1>TRINH LONG VU</h1>
      <h2>Web Developer</h2>
     </div>
+    <!-- END TOP  -->
 
+    <!-- ITEM 1 -->
     <div class="cv-item">
      <div class="cv-title">
       <div class="cv-icon-hexagon">
@@ -282,7 +366,9 @@
       repudiandae aspernatur quos assumenda perspiciatis! Obcaecati cum
      </p>
     </div>
+    <!-- END ITEM 1 -->
 
+    <!-- ITEM 2 -->
     <div class="cv-item">
      <div class="cv-title">
       <div class="cv-icon-hexagon">
@@ -318,7 +404,9 @@
       </div>
      </div>
     </div>
+    <!-- END ITEM 2 -->
 
+    <!-- ITEM 3 -->
     <div class="cv-item">
      <div class="cv-title">
       <div class="cv-icon-hexagon">
@@ -329,24 +417,34 @@
      </div>
      <ul class="cv-main">
       <li class="cv-list">
-       INNOVATE
-       <div class="progress-bar"></div>
+       <div class="flex-row">
+        INNOVATE
+        <div class="progress-bar percent-80"></div>
+       </div>
       </li>
       <li class="cv-list">
-       CREATIVE
-       <div class="progress-bar"></div>
+       <div class="flex-row">
+        CREATIVE
+        <div class="progress-bar percent-70"></div>
+       </div>
       </li>
       <li class="cv-list">
-       TEAMWORK
-       <div class="progress-bar"></div>
+       <div class="flex-row">
+        TEAMWORK
+        <div class="progress-bar percent-60"></div>
+       </div>
       </li>
       <li class="cv-list">
-       HOBBIES
-       <div class="progress-bar"></div>
+       <div class="flex-row">
+        HOBBIES
+        <div class="progress-bar percent-50"></div>
+       </div>
       </li>
      </ul>
     </div>
+    <!-- END ITEM 3 -->
 
+    <!-- ITEM 4 -->
     <div class="cv-item">
      <div class="cv-title">
       <div class="cv-icon-hexagon">
@@ -382,9 +480,246 @@
       </div>
      </div>
     </div>
-    <!-- end -->
+    <!-- END ITEM 4 -->
    </div>
-   <div class="cv-child"></div>
+   <!-- END LEFT -->
+
+   <!--BEGIN RIGHT-->
+   <div class="cv-child">
+    <!-- ITEM 1 -->
+    <div class="cv-item cv-item-dark">
+     <div class="cv-title">
+      <div class="icon">
+       <div class="cv-icon-hexagon">
+        <i class="las la-suitcase"></i>
+       </div>
+      </div>
+      <div class="cv-title-name">
+       <h3>WORK EXPERIENCE</h3>
+      </div>
+      <div class="cv-line"></div>
+     </div>
+
+     <ul class="cv-main">
+      <li class="cv-list">
+       <h3><b>Art director</b> / Company in los angeles, 2015</h3>
+       <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere tenetur
+        cumque quo qui earum deserunt ut natus, atque consectetur impedit, porro
+        excepturi vero illo eligendi velit unde repellendus eum ea?
+       </p>
+      </li>
+      <li class="cv-list mt-40">
+       <h3><b>Art director</b> / Company in los angeles, 2015</h3>
+       <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere tenetur
+        cumque quo qui earum deserunt ut natus, atque consectetur impedit, porro
+        excepturi vero illo eligendi velit unde repellendus eum ea?
+       </p>
+      </li>
+      <li class="cv-list mt-40">
+       <h3><b>Art director</b> / Company in los angeles, 2015</h3>
+       <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere tenetur
+        cumque quo qui earum deserunt ut natus, atque consectetur impedit, porro
+        excepturi vero illo eligendi velit unde repellendus eum ea?
+       </p>
+      </li>
+      <li class="cv-list mt-40">
+       <h3><b>Art director</b> / Company in los angeles, 2015</h3>
+       <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere tenetur
+        cumque quo qui earum deserunt ut natus, atque consectetur impedit, porro
+        excepturi vero illo eligendi velit unde repellendus eum ea?
+       </p>
+      </li>
+     </ul>
+    </div>
+    <!--END ITEM 1 -->
+
+    <!-- ITEM 2 -->
+    <div class="cv-item cv-item-dark">
+     <div class="cv-title">
+      <div class="icon">
+       <div class="cv-icon-hexagon">
+        <i class="las la-chart-pie"></i>
+       </div>
+      </div>
+      <div class="cv-title-name">
+       <h3>professional skills</h3>
+      </div>
+      <div class="cv-line"></div>
+     </div>
+
+     <ul class="cv-main flex-row">
+      <div>
+       <li class="cv-list">
+        <div class="flex-row">
+         NETWORKING
+         <div class="progress-bar percent-80"></div>
+        </div>
+       </li>
+       <li class="cv-list">
+        <div class="flex-row">
+         WEB PROGRAMMER
+         <div class="progress-bar percent-50"></div>
+        </div>
+       </li>
+       <li class="cv-list">
+        <div class="flex-row">
+         BRANDING
+         <div class="progress-bar percent-100"></div>
+        </div>
+       </li>
+      </div>
+      <div>
+       <li class="cv-list">
+        <div class="flex-row">
+         GRAPHIC DESIGN
+         <div class="progress-bar percent-80"></div>
+        </div>
+       </li>
+       <li class="cv-list">
+        <div class="flex-row">
+         INTERFACE DESIGN
+         <div class="progress-bar percent-90"></div>
+        </div>
+       </li>
+       <li class="cv-list">
+        <div class="flex-row">
+         SEO
+         <div class="progress-bar percent-60"></div>
+        </div>
+       </li>
+      </div>
+     </ul>
+    </div>
+    <!-- END ITEM 2 -->
+
+    <!-- ITEM 3 -->
+    <div class="cv-item cv-item-dark">
+     <div class="cv-title">
+      <div class="icon">
+       <div class="cv-icon-hexagon">
+        <i class="las la-edit"></i>
+       </div>
+      </div>
+      <div class="cv-title-name">
+       <h3>EDUCATION</h3>
+      </div>
+      <div class="cv-line"></div>
+     </div>
+
+     <ul class="cv-main">
+      <li class="cv-list">
+       <h3><b>Art director</b> / Company in los angeles, 2015</h3>
+       <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere tenetur
+        cumque quo qui earum deserunt ut natus, atque consectetur impedit, porro
+        excepturi vero illo eligendi velit unde repellendus eum ea?
+       </p>
+      </li>
+      <li class="cv-list mt-40">
+       <h3><b>Art director</b> / Company in los angeles, 2015</h3>
+       <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere tenetur
+        cumque quo qui earum deserunt ut natus, atque consectetur impedit, porro
+        excepturi vero illo eligendi velit unde repellendus eum ea?
+       </p>
+      </li>
+      <li class="cv-list mt-40">
+       <h3><b>Art director</b> / Company in los angeles, 2015</h3>
+       <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere tenetur
+        cumque quo qui earum deserunt ut natus, atque consectetur impedit, porro
+        excepturi vero illo eligendi velit unde repellendus eum ea?
+       </p>
+      </li>
+      <li class="cv-list mt-40">
+       <h3><b>Art director</b> / Company in los angeles, 2015</h3>
+       <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere tenetur
+        cumque quo qui earum deserunt ut natus, atque consectetur impedit, porro
+        excepturi vero illo eligendi velit unde repellendus eum ea?
+       </p>
+      </li>
+     </ul>
+    </div>
+    <!-- END ITEM 3 -->
+
+    <!-- ITEM 4 -->
+    <div class="cv-item cv-item-dark">
+     <div class="cv-title">
+      <div class="icon">
+       <div class="cv-icon-hexagon">
+        <i class="las la-lightbulb"></i>
+       </div>
+      </div>
+      <div class="cv-title-name">
+       <h3>proficiency</h3>
+      </div>
+      <div class="cv-line"></div>
+     </div>
+
+     <ul class="cv-main flex-row">
+      <div>
+       <li class="cv-list">
+        <div class="flex-row">
+         HTML
+         <div class="progress-bar percent-80"></div>
+        </div>
+       </li>
+       <li class="cv-list">
+        <div class="flex-row">
+         JAVASCRIPT
+         <div class="progress-bar percent-50"></div>
+        </div>
+       </li>
+       <li class="cv-list">
+        <div class="flex-row">
+         DESIGN
+         <div class="progress-bar percent-100"></div>
+        </div>
+       </li>
+       <li class="cv-list">
+        <div class="flex-row">
+         DREAMWEAVER
+         <div class="progress-bar percent-70"></div>
+        </div>
+       </li>
+      </div>
+      <div>
+       <li class="cv-list">
+        <div class="flex-row">
+         CSS
+         <div class="progress-bar percent-80"></div>
+        </div>
+       </li>
+       <li class="cv-list">
+        <div class="flex-row">
+         PHOTOSHOP
+         <div class="progress-bar percent-90"></div>
+        </div>
+       </li>
+       <li class="cv-list">
+        <div class="flex-row">
+         ILLUSTRATOR
+         <div class="progress-bar percent-60"></div>
+        </div>
+       </li>
+       <li class="cv-list">
+        <div class="flex-row">
+         WORDPRESS
+         <div class="progress-bar percent-60"></div>
+        </div>
+       </li>
+      </div>
+     </ul>
+    </div>
+    <!-- END ITEM 4 -->
+   </div>
+   <!--    END RIGHT-->
   </div>
+  <!-- END CV -->
  </body>
 </html>
