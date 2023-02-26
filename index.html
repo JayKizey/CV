@@ -1,727 +1,733 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-   href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
-   rel="stylesheet"
-  />
-  <link
-   rel="stylesheet"
-   href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
-  />
-  <title>Cv</title>
-  <style>
-   /* 1 block = 40px */
-   * {
-    font-family: "Poppins", sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-   }
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
+    />
+    <title>Cv</title>
+    <style>
+      /* 1 block = 40px */
+      * {
+        font-family: "Poppins", sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-   b {
-    font-weight: bold;
-   }
+      b {
+        font-weight: bold;
+      }
 
-   body {
-    --bg-primary: #e7e7e9;
-    --bg-secondary: #0f2033;
-    --txt-primary: #0f2033;
-    --txt-secondary: #efeff3;
-    background: #efeff3;
-   }
+      body {
+        --bg-primary: #e7e7e9;
+        --bg-secondary: #0f2033;
+        --txt-primary: #0f2033;
+        --txt-secondary: #efeff3;
+        background: #efeff3;
+      }
 
-   h1 {
-    font-size: 40px;
-    text-transform: uppercase;
-   }
+      h1 {
+        font-size: 40px;
+        text-transform: uppercase;
+      }
 
-   h2 {
-    font-size: 24px;
-    text-transform: uppercase;
-   }
+      h2 {
+        font-size: 24px;
+        text-transform: uppercase;
+      }
 
-   h3 {
-    font-size: 20px;
-    text-transform: uppercase;
-   }
+      h3 {
+        font-size: 20px;
+        text-transform: uppercase;
+      }
 
-   h3 b {
-    font-weight: bold;
-    font-size: 20px;
-   }
+      h3 b {
+        font-weight: bold;
+        font-size: 20px;
+      }
 
-   p {
-    font-size: 14px;
-   }
+      p {
+        font-size: 14px;
+      }
 
-   .mt-40 {
-    margin-top: 40px;
-   }
+      .mt-40 {
+        margin-top: 40px;
+      }
 
-   .flex-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-   }
+      .flex-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
 
-   .cv {
-    display: flex;
-    flex-direction: row;
-    margin: auto;
-    max-width: 1160px;
-   }
+      .cv {
+        display: flex;
+        flex-direction: row;
+        margin: auto;
+        max-width: 1160px;
+      }
 
-   .cv-child {
-    display: flex;
-    flex-direction: column;
-   }
+      .cv-child {
+        display: flex;
+        flex-direction: column;
+      }
 
-   .cv-child:first-child {
-    padding-top: 40px;
-    background: var(--bg-secondary);
-    min-width: 380px;
-    width: 380px;
-    height: auto;
-    color: var(--txt-secondary);
-   }
+      .cv-child:first-child {
+        padding-top: 40px;
+        background: var(--bg-secondary);
+        min-width: 380px;
+        width: 380px;
+        height: auto;
+        color: var(--txt-secondary);
+      }
 
-   .cv-child:last-child {
-    background-color: var(--bg-primary);
-    width: 100%;
-   }
+      .cv-child:last-child {
+        background-color: var(--bg-primary);
+        width: 100%;
+      }
 
-   .hexagon {
-    -webkit-clip-path: polygon(
-     50% 0,
-     100% 25%,
-     100% 75%,
-     50% 100%,
-     0 75%,
-     0 25%
-    );
-   }
+      .hexagon {
+        -webkit-clip-path: polygon(
+          50% 0,
+          100% 25%,
+          100% 75%,
+          50% 100%,
+          0 75%,
+          0 25%
+        );
+      }
 
-   .cv-top {
-    display: block;
-    margin: 0 auto;
-    position: relative;
-    height: 150px; /* width * 0.866 */
-    width: 130px;
-    background: var(--txt-secondary);
-    box-sizing: border-box;
-   }
+      .cv-top {
+        display: block;
+        margin: 0 auto;
+        position: relative;
+        height: 150px; /* width * 0.866 */
+        width: 130px;
+        background: var(--txt-secondary);
+        box-sizing: border-box;
+      }
 
-   .cv-top-avatar {
-    position: absolute;
-    background-color: orange; /*color of the main-background*/
-    top: 2px; /* equal to border thickness */
-    left: 2px; /* equal to border thickness */
-    height: 146px; /* container height - (border thickness * 2) */
-    width: 126px; /* container height - (border thickness * 2) */
-   }
+      .cv-top-avatar {
+        position: absolute;
+        background-color: orange; /*color of the main-background*/
+        top: 2px; /* equal to border thickness */
+        left: 2px; /* equal to border thickness */
+        height: 146px; /* container height - (border thickness * 2) */
+        width: 126px; /* container height - (border thickness * 2) */
+      }
 
-   .cv-top img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-   }
+      .cv-top img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
 
-   .cv-name {
-    background-color: var(--bg-secondary);
-    text-align: center;
-   }
+      .cv-name {
+        background-color: var(--bg-secondary);
+        text-align: center;
+      }
 
-   .cv-item {
-    padding: 40px 0 40px 40px;
-   }
+      .cv-item {
+        padding: 40px 0 40px 40px;
+      }
 
-   .cv-title {
-    margin-top: 30px;
-    display: -webkit-inline-box;
-    width: 100%;
-    padding: 5px 0;
-   }
+      .cv-title {
+        margin-top: 30px;
+        display: -webkit-inline-box;
+        width: 100%;
+        padding: 5px 0;
+      }
 
-   .cv-title .las {
-    color: var(--txt-secondary);
-    font-size: 28px;
-    line-height: 32px;
-   }
+      .cv-title .las {
+        color: var(--txt-secondary);
+        font-size: 28px;
+        line-height: 32px;
+      }
 
-   .cv-title .lab {
-    color: var(--bg-secondary);
-    font-size: 28px;
-    line-height: 32px;
-   }
+      .cv-title .lab {
+        color: var(--bg-secondary);
+        font-size: 28px;
+        line-height: 32px;
+      }
 
-   .cv-title h3 {
-    margin-left: 8px;
-    margin-right: 10px;
-   }
+      .cv-title h3 {
+        margin-left: 8px;
+        margin-right: 10px;
+      }
 
-   .cv-icon-hexagon {
-    text-align: center;
-    line-height: 32px;
-    position: relative;
-    z-index: 0;
+      .cv-icon-hexagon {
+        text-align: center;
+        line-height: 32px;
+        position: relative;
+        z-index: 0;
 
-    border-style: solid;
-    border-color: #fff;
-    border-width: 3px;
-    width: 56px;
-    height: 32px;
-    border-top: none;
-    border-bottom: none;
-   }
+        border-style: solid;
+        border-color: #fff;
+        border-width: 3px;
+        width: 56px;
+        height: 32px;
+        border-top: none;
+        border-bottom: none;
+      }
 
-   .cv-icon-hexagon:before,
-   .cv-icon-hexagon::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -2px;
-    z-index: -1;
+      .cv-icon-hexagon:before,
+      .cv-icon-hexagon::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -2px;
+        z-index: -1;
 
-    border-style: solid;
-    border-color: #fff;
-    border-width: 3px;
-    width: 56px;
-    height: 32px;
-    border-top: none;
-    border-bottom: none;
+        border-style: solid;
+        border-color: #fff;
+        border-width: 3px;
+        width: 56px;
+        height: 32px;
+        border-top: none;
+        border-bottom: none;
 
-    box-sizing: border-box;
-   }
+        box-sizing: border-box;
+      }
 
-   .cv-icon-hexagon:before {
-    transform: rotate(60deg);
-   }
+      .cv-icon-hexagon:before {
+        transform: rotate(60deg);
+      }
 
-   .cv-icon-hexagon::after {
-    transform: rotate(-60deg);
-   }
+      .cv-icon-hexagon::after {
+        transform: rotate(-60deg);
+      }
 
-   .cv-line {
-    height: 3px;
-    width: 100%;
-    background: var(--txt-secondary);
-    margin: auto;
-   }
+      .cv-line {
+        height: 3px;
+        width: 100%;
+        background: var(--txt-secondary);
+        margin: auto;
+      }
 
-   .cv-item > p {
-    padding: 15px;
-    margin-top: 20px;
-   }
+      .cv-item > p {
+        padding: 15px;
+        margin-top: 20px;
+      }
 
-   .cv-main {
-    margin-top: 30px;
-   }
+      .cv-main {
+        margin-top: 30px;
+      }
 
-   .cv-icon-dark,
-   .cv-icon-dark::after,
-   .cv-icon-dark::before {
-    background-color: var(--bg-primary);
-    margin-right: 20px;
-    border-color: transparent;
-   }
+      .cv-icon-dark,
+      .cv-icon-dark::after,
+      .cv-icon-dark::before {
+        background-color: var(--bg-primary);
+        margin-right: 20px;
+        border-color: transparent;
+      }
 
-   .cv-icon-dark .las {
-    color: var(--bg-secondary);
-   }
+      .cv-icon-dark .las {
+        color: var(--bg-secondary);
+      }
 
-   .progress-bar {
-    height: 15px;
-    width: 120px;
-    background: var(--bg-secondary);
-    margin: auto;
-    border: 2px solid var(--bg-primary);
-    border-radius: 5px;
-    display: inline-block;
-    position: relative;
-    margin: 0 10px;
-   }
+      .progress-bar {
+        height: 15px;
+        width: 120px;
+        background: var(--bg-secondary);
+        margin: auto;
+        border: 2px solid var(--bg-primary);
+        border-radius: 5px;
+        display: inline-block;
+        position: relative;
+        margin: 0 10px;
+      }
 
-   .progress-bar::before {
-    content: "";
-    height: 11px;
-    width: 80%;
-    background: var(--bg-primary);
-    position: absolute;
-    top: 0;
-    left: 0;
-   }
+      .progress-bar::before {
+        content: "";
+        height: 11px;
+        width: 80%;
+        background: var(--bg-primary);
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
 
-   .progress-bar.percent-80:before {
-    width: 80%;
-   }
+      .progress-bar.percent-80:before {
+        width: 80%;
+      }
 
-   .progress-bar.percent-70:before {
-    width: 70%;
-   }
+      .progress-bar.percent-70:before {
+        width: 70%;
+      }
 
-   .progress-bar.percent-60:before {
-    width: 60%;
-   }
+      .progress-bar.percent-60:before {
+        width: 60%;
+      }
 
-   .progress-bar.percent-50:before {
-    width: 50%;
-   }
+      .progress-bar.percent-50:before {
+        width: 50%;
+      }
 
-   .progress-bar.percent-90:before {
-    width: 90%;
-   }
+      .progress-bar.percent-90:before {
+        width: 90%;
+      }
 
-   .progress-bar.percent-100:before {
-    width: 100%;
-   }
+      .progress-bar.percent-100:before {
+        width: 100%;
+      }
 
-   .cv-item ul {
-    padding: 0 20px;
-    margin-top: 40px;
-   }
-   .cv-item > li {
-    margin: auto;
-   }
+      .cv-item ul {
+        padding: 0 20px;
+        margin-top: 40px;
+      }
+      .cv-item > li {
+        margin: auto;
+      }
 
-   .cv-item-dark .cv-icon-hexagon,
-   .cv-item-dark .cv-icon-hexagon:after,
-   .cv-item-dark .cv-icon-hexagon:before {
-    border-color: var(--bg-secondary);
-   }
+      .cv-item-dark .cv-icon-hexagon,
+      .cv-item-dark .cv-icon-hexagon:after,
+      .cv-item-dark .cv-icon-hexagon:before {
+        border-color: var(--bg-secondary);
+      }
 
-   .cv-item-dark .cv-title i {
-    color: var(--bg-secondary);
-   }
+      .cv-item-dark .cv-title i {
+        color: var(--bg-secondary);
+      }
 
-   .cv-item-dark .cv-title .cv-line {
-    background: var(--bg-secondary);
-    max-width: 588px;
-   }
+      .cv-item-dark .cv-title .cv-line {
+        background: var(--bg-secondary);
+        max-width: 588px;
+      }
 
-   .cv-item-dark .cv-title {
-    display: flex;
-    align-items: center;
-   }
+      .cv-item-dark .cv-title {
+        display: flex;
+        align-items: center;
+      }
 
-   .cv-item-dark .cv-title-name {
-    white-space: nowrap;
-   }
+      .cv-item-dark .cv-title-name {
+        white-space: nowrap;
+      }
 
-   .cv-item-dark .cv-main {
-    padding-left: 50px;
-   }
+      .cv-item-dark .cv-main {
+        padding-left: 50px;
+      }
 
-   .cv-item-dark .progress-bar {
-    border-color: var(--bg-secondary);
-    background: var(--bg-primary);
-   }
+      .cv-item-dark .progress-bar {
+        border-color: var(--bg-secondary);
+        background: var(--bg-primary);
+      }
 
-   .cv-item-dark .progress-bar:before {
-    background: var(--bg-secondary);
-   }
-  </style>
- </head>
- <body>
-  <!-- BEGIN CV -->
-  <div class="cv">
-   <!--BEGIN LEFT-->
-   <div class="cv-child">
-    <!-- BEGIN TOP -->
-    <div class="cv-top hexagon">
-     <div class="cv-top-avatar hexagon">
-      <img
-       src="https://user-images.githubusercontent.com/125424498/220210173-6a218314-50c7-4838-8857-899089e5d626.jpg"
-       alt=""
-       class="hexagon"
-      />
-     </div>
+      .cv-item-dark .progress-bar:before {
+        background: var(--bg-secondary);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- BEGIN CV -->
+    <div class="cv">
+      <!--BEGIN LEFT-->
+      <div class="cv-child">
+        <!-- BEGIN TOP -->
+        <div class="cv-top hexagon">
+          <div class="cv-top-avatar hexagon">
+            <img
+              src="https://user-images.githubusercontent.com/125424498/220210173-6a218314-50c7-4838-8857-899089e5d626.jpg"
+              alt=""
+              class="hexagon"
+            />
+          </div>
+        </div>
+        <div class="cv-name">
+          <h1>TRINH LONG VU</h1>
+          <h2>Web Developer</h2>
+        </div>
+        <!-- END TOP  -->
+
+        <!-- ITEM 1 -->
+        <div class="cv-item">
+          <div class="cv-title">
+            <div class="cv-icon-hexagon">
+              <i class="las la-file-alt"></i>
+            </div>
+            <h3><b>PROFILE</b></h3>
+            <div class="cv-line"></div>
+          </div>
+          <p>
+            <b>Success</b> is not in the destination but on the way. And
+            perfection is not in the way but at the end.
+          </p>
+        </div>
+        <!-- END ITEM 1 -->
+
+        <!-- ITEM 2 -->
+        <div class="cv-item">
+          <div class="cv-title">
+            <div class="cv-icon-hexagon">
+              <i class="las la-user"></i>
+            </div>
+            <h3><b>CONTACT ME</b></h3>
+            <div class="cv-line"></div>
+          </div>
+          <div class="cv-main">
+            <div class="cv-title">
+              <div class="cv-icon-hexagon cv-icon-dark">
+                <i class="las la-phone"></i>
+              </div>
+              +555 555 5555
+            </div>
+            <div class="cv-title">
+              <div class="cv-icon-hexagon cv-icon-dark">
+                <i class="las la-envelope"></i>
+              </div>
+              abc@abc.com
+            </div>
+            <div class="cv-title">
+              <div class="cv-icon-hexagon cv-icon-dark">
+                <i class="las la-globe"></i>
+              </div>
+              www.website.com
+            </div>
+            <div class="cv-title">
+              <div class="cv-icon-hexagon cv-icon-dark">
+                <i class="las la-map-marker"></i>
+              </div>
+              51B Phu Lam, Ward 9, Dist.6
+            </div>
+          </div>
+        </div>
+        <!-- END ITEM 2 -->
+
+        <!-- ITEM 3 -->
+        <div class="cv-item">
+          <div class="cv-title">
+            <div class="cv-icon-hexagon">
+              <i class="las la-chart-pie"></i>
+            </div>
+            <h3><b>PERSONAL SKILLS</b></h3>
+            <div class="cv-line"></div>
+          </div>
+          <ul class="cv-main">
+            <li class="cv-list">
+              <div class="flex-row">
+                INNOVATE
+                <div class="progress-bar percent-80"></div>
+              </div>
+            </li>
+            <li class="cv-list">
+              <div class="flex-row">
+                CREATIVE
+                <div class="progress-bar percent-70"></div>
+              </div>
+            </li>
+            <li class="cv-list">
+              <div class="flex-row">
+                TEAMWORK
+                <div class="progress-bar percent-60"></div>
+              </div>
+            </li>
+            <li class="cv-list">
+              <div class="flex-row">
+                HOBBIES
+                <div class="progress-bar percent-50"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!-- END ITEM 3 -->
+
+        <!-- ITEM 4 -->
+        <div class="cv-item">
+          <div class="cv-title">
+            <div class="cv-icon-hexagon">
+              <i class="las la-user"></i>
+            </div>
+            <h3><b>CONNECT</b></h3>
+            <div class="cv-line"></div>
+          </div>
+          <div class="cv-main">
+            <div class="cv-title">
+              <div class="cv-icon-hexagon cv-icon-dark">
+                <i class="lab la-linkedin-in"></i>
+              </div>
+              linkedin.com/username
+            </div>
+            <div class="cv-title">
+              <div class="cv-icon-hexagon cv-icon-dark">
+                <i class="lab la-twitter"></i>
+              </div>
+              twitter.com/username
+            </div>
+            <div class="cv-title">
+              <div class="cv-icon-hexagon cv-icon-dark">
+                <i class="lab la-behance"></i>
+              </div>
+              behance.com/username
+            </div>
+            <div class="cv-title">
+              <div class="cv-icon-hexagon cv-icon-dark">
+                <i class="lab la-dribbble"></i>
+              </div>
+              dribbble.com/username
+            </div>
+          </div>
+        </div>
+        <!-- END ITEM 4 -->
+      </div>
+      <!-- END LEFT -->
+
+      <!--BEGIN RIGHT-->
+      <div class="cv-child">
+        <!-- ITEM 1 -->
+        <div class="cv-item cv-item-dark">
+          <div class="cv-title">
+            <div class="icon">
+              <div class="cv-icon-hexagon">
+                <i class="las la-suitcase"></i>
+              </div>
+            </div>
+            <div class="cv-title-name">
+              <h3><b>WORK EXPERIENCE</b></h3>
+            </div>
+            <div class="cv-line"></div>
+          </div>
+
+          <ul class="cv-main">
+            <li class="cv-list">
+              <h3><b>lorem</b> / Lorem, ipsum dolor sit</h3>
+
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere
+                tenetur cumque quo qui earum deserunt ut natus, atque
+                consectetur impedit, porro excepturi vero illo eligendi velit
+                unde repellendus eum ea?
+              </p>
+            </li>
+            <li class="cv-list mt-40">
+              <h3><b>lorem</b> / Lorem, ipsum dolor sit</h3>
+
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere
+                tenetur cumque quo qui earum deserunt ut natus, atque
+                consectetur impedit, porro excepturi vero illo eligendi velit
+                unde repellendus eum ea?
+              </p>
+            </li>
+            <li class="cv-list mt-40">
+              <h3><b>lorem</b> / Lorem, ipsum dolor sit</h3>
+
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere
+                tenetur cumque quo qui earum deserunt ut natus, atque
+                consectetur impedit, porro excepturi vero illo eligendi velit
+                unde repellendus eum ea?
+              </p>
+            </li>
+            <li class="cv-list mt-40">
+              <h3><b>lorem</b> / Lorem, ipsum dolor sit</h3>
+
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere
+                tenetur cumque quo qui earum deserunt ut natus, atque
+                consectetur impedit, porro excepturi vero illo eligendi velit
+                unde repellendus eum ea?
+              </p>
+            </li>
+          </ul>
+        </div>
+        <!--END ITEM 1 -->
+
+        <!-- ITEM 2 -->
+        <div class="cv-item cv-item-dark">
+          <div class="cv-title">
+            <div class="icon">
+              <div class="cv-icon-hexagon">
+                <i class="las la-chart-pie"></i>
+              </div>
+            </div>
+            <div class="cv-title-name">
+              <h3><b>professional skills</b></h3>
+            </div>
+            <div class="cv-line"></div>
+          </div>
+
+          <ul class="cv-main flex-row">
+            <div>
+              <li class="cv-list">
+                <div class="flex-row">
+                  NETWORKING
+                  <div class="progress-bar percent-80"></div>
+                </div>
+              </li>
+              <li class="cv-list">
+                <div class="flex-row">
+                  WEB PROGRAMMER
+                  <div class="progress-bar percent-50"></div>
+                </div>
+              </li>
+              <li class="cv-list">
+                <div class="flex-row">
+                  BRANDING
+                  <div class="progress-bar percent-100"></div>
+                </div>
+              </li>
+            </div>
+            <div>
+              <li class="cv-list">
+                <div class="flex-row">
+                  GRAPHIC DESIGN
+                  <div class="progress-bar percent-80"></div>
+                </div>
+              </li>
+              <li class="cv-list">
+                <div class="flex-row">
+                  INTERFACE DESIGN
+                  <div class="progress-bar percent-90"></div>
+                </div>
+              </li>
+              <li class="cv-list">
+                <div class="flex-row">
+                  SEO
+                  <div class="progress-bar percent-60"></div>
+                </div>
+              </li>
+            </div>
+          </ul>
+        </div>
+        <!-- END ITEM 2 -->
+
+        <!-- ITEM 3 -->
+        <div class="cv-item cv-item-dark">
+          <div class="cv-title">
+            <div class="icon">
+              <div class="cv-icon-hexagon">
+                <i class="las la-university"></i>
+              </div>
+            </div>
+            <div class="cv-title-name">
+              <h3><b>education</b></h3>
+            </div>
+            <div class="cv-line"></div>
+          </div>
+
+          <ul class="cv-main">
+            <li class="cv-list">
+              <h3><b>master degree</b> / 2020-2024</h3>
+              <p>
+                <b>Ho Chi Minh City University of Agriculture and Forestry </b>
+              </p>
+            </li>
+            <li class="cv-list mt-40">
+              <h3><b>lorem</b> / Lorem, ipsum dolor sit</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere
+                tenetur cumque quo qui earum deserunt ut natus, atque
+                consectetur impedit, porro excepturi vero illo eligendi velit
+                unde repellendus eum ea?
+              </p>
+            </li>
+            <li class="cv-list mt-40">
+              <h3><b>lorem</b> / Lorem, ipsum dolor sit</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere
+                tenetur cumque quo qui earum deserunt ut natus, atque
+                consectetur impedit, porro excepturi vero illo eligendi velit
+                unde repellendus eum ea?
+              </p>
+            </li>
+            <li class="cv-list mt-40">
+              <h3><b>lorem</b> / Lorem, ipsum dolor sit</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere
+                tenetur cumque quo qui earum deserunt ut natus, atque
+                consectetur impedit, porro excepturi vero illo eligendi velit
+                unde repellendus eum ea?
+              </p>
+            </li>
+          </ul>
+        </div>
+        <!-- END ITEM 3 -->
+
+        <!-- ITEM 4 -->
+        <div class="cv-item cv-item-dark">
+          <div class="cv-title">
+            <div class="icon">
+              <div class="cv-icon-hexagon">
+                <i class="las la-lightbulb"></i>
+              </div>
+            </div>
+            <div class="cv-title-name">
+              <h3><b>proficiency</b></h3>
+            </div>
+            <div class="cv-line"></div>
+          </div>
+
+          <ul class="cv-main flex-row">
+            <div>
+              <li class="cv-list">
+                <div class="flex-row">
+                  HTML
+                  <div class="progress-bar percent-80"></div>
+                </div>
+              </li>
+              <li class="cv-list">
+                <div class="flex-row">
+                  JAVASCRIPT
+                  <div class="progress-bar percent-50"></div>
+                </div>
+              </li>
+              <li class="cv-list">
+                <div class="flex-row">
+                  DESIGN
+                  <div class="progress-bar percent-100"></div>
+                </div>
+              </li>
+              <li class="cv-list">
+                <div class="flex-row">
+                  JAVA
+                  <div class="progress-bar percent-70"></div>
+                </div>
+              </li>
+            </div>
+            <div>
+              <li class="cv-list">
+                <div class="flex-row">
+                  CSS
+                  <div class="progress-bar percent-80"></div>
+                </div>
+              </li>
+              <li class="cv-list">
+                <div class="flex-row">
+                  PHOTOSHOP
+                  <div class="progress-bar percent-90"></div>
+                </div>
+              </li>
+              <li class="cv-list">
+                <div class="flex-row">
+                  REACTJS
+                  <div class="progress-bar percent-60"></div>
+                </div>
+              </li>
+              <li class="cv-list">
+                <div class="flex-row">
+                  WORDPRESS
+                  <div class="progress-bar percent-60"></div>
+                </div>
+              </li>
+            </div>
+          </ul>
+        </div>
+        <!-- END ITEM 4 -->
+      </div>
+      <!--    END RIGHT-->
     </div>
-    <div class="cv-name">
-     <h1>TRINH LONG VU</h1>
-     <h2>Web Developer</h2>
-    </div>
-    <!-- END TOP  -->
-
-    <!-- ITEM 1 -->
-    <div class="cv-item">
-     <div class="cv-title">
-      <div class="cv-icon-hexagon">
-       <i class="las la-file-alt"></i>
-      </div>
-      <h3><b>PROFILE</b></h3>
-      <div class="cv-line"></div>
-     </div>
-     <p>
-      <b>Lorem ipsum dolor</b> sit amet consectetur adipisicing elit. Minima
-      minus provident obcaecati necessitatibus excepturi animi dolore, nisi
-      repudiandae aspernatur quos assumenda perspiciatis! Obcaecati cum
-     </p>
-    </div>
-    <!-- END ITEM 1 -->
-
-    <!-- ITEM 2 -->
-    <div class="cv-item">
-     <div class="cv-title">
-      <div class="cv-icon-hexagon">
-       <i class="las la-user"></i>
-      </div>
-      <h3><b>CONTACT ME</b></h3>
-      <div class="cv-line"></div>
-     </div>
-     <div class="cv-main">
-      <div class="cv-title">
-       <div class="cv-icon-hexagon cv-icon-dark">
-        <i class="las la-phone"></i>
-       </div>
-       +555 555 5555
-      </div>
-      <div class="cv-title">
-       <div class="cv-icon-hexagon cv-icon-dark">
-        <i class="las la-envelope"></i>
-       </div>
-       abc@abc.com
-      </div>
-      <div class="cv-title">
-       <div class="cv-icon-hexagon cv-icon-dark">
-        <i class="las la-globe"></i>
-       </div>
-       www.website.com
-      </div>
-      <div class="cv-title">
-       <div class="cv-icon-hexagon cv-icon-dark">
-        <i class="las la-map-marker"></i>
-       </div>
-       51B Phu Lam, Ward 9, Dist.6
-      </div>
-     </div>
-    </div>
-    <!-- END ITEM 2 -->
-
-    <!-- ITEM 3 -->
-    <div class="cv-item">
-     <div class="cv-title">
-      <div class="cv-icon-hexagon">
-       <i class="las la-chart-pie"></i>
-      </div>
-      <h3><b>PERSONAL SKILLS</b></h3>
-      <div class="cv-line"></div>
-     </div>
-     <ul class="cv-main">
-      <li class="cv-list">
-       <div class="flex-row">
-        INNOVATE
-        <div class="progress-bar percent-80"></div>
-       </div>
-      </li>
-      <li class="cv-list">
-       <div class="flex-row">
-        CREATIVE
-        <div class="progress-bar percent-70"></div>
-       </div>
-      </li>
-      <li class="cv-list">
-       <div class="flex-row">
-        TEAMWORK
-        <div class="progress-bar percent-60"></div>
-       </div>
-      </li>
-      <li class="cv-list">
-       <div class="flex-row">
-        HOBBIES
-        <div class="progress-bar percent-50"></div>
-       </div>
-      </li>
-     </ul>
-    </div>
-    <!-- END ITEM 3 -->
-
-    <!-- ITEM 4 -->
-    <div class="cv-item">
-     <div class="cv-title">
-      <div class="cv-icon-hexagon">
-       <i class="las la-user"></i>
-      </div>
-      <h3><b>CONNECT</b></h3>
-      <div class="cv-line"></div>
-     </div>
-     <div class="cv-main">
-      <div class="cv-title">
-       <div class="cv-icon-hexagon cv-icon-dark">
-        <i class="lab la-linkedin-in"></i>
-       </div>
-       linkedin.com/username
-      </div>
-      <div class="cv-title">
-       <div class="cv-icon-hexagon cv-icon-dark">
-        <i class="lab la-twitter"></i>
-       </div>
-       twitter.com/username
-      </div>
-      <div class="cv-title">
-       <div class="cv-icon-hexagon cv-icon-dark">
-        <i class="lab la-behance"></i>
-       </div>
-       behance.com/username
-      </div>
-      <div class="cv-title">
-       <div class="cv-icon-hexagon cv-icon-dark">
-        <i class="lab la-dribbble"></i>
-       </div>
-       dribbble.com/username
-      </div>
-     </div>
-    </div>
-    <!-- END ITEM 4 -->
-   </div>
-   <!-- END LEFT -->
-
-   <!--BEGIN RIGHT-->
-   <div class="cv-child">
-    <!-- ITEM 1 -->
-    <div class="cv-item cv-item-dark">
-     <div class="cv-title">
-      <div class="icon">
-       <div class="cv-icon-hexagon">
-        <i class="las la-suitcase"></i>
-       </div>
-      </div>
-      <div class="cv-title-name">
-       <h3><b>WORK EXPERIENCE</b></h3>
-      </div>
-      <div class="cv-line"></div>
-     </div>
-
-     <ul class="cv-main">
-      <li class="cv-list">
-       <h3><b>lorem</b> / Lorem, ipsum dolor sit</h3>
-
-       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere tenetur
-        cumque quo qui earum deserunt ut natus, atque consectetur impedit, porro
-        excepturi vero illo eligendi velit unde repellendus eum ea?
-       </p>
-      </li>
-      <li class="cv-list mt-40">
-       <h3><b>lorem</b> / Lorem, ipsum dolor sit</h3>
-
-       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere tenetur
-        cumque quo qui earum deserunt ut natus, atque consectetur impedit, porro
-        excepturi vero illo eligendi velit unde repellendus eum ea?
-       </p>
-      </li>
-      <li class="cv-list mt-40">
-       <h3><b>lorem</b> / Lorem, ipsum dolor sit</h3>
-
-       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere tenetur
-        cumque quo qui earum deserunt ut natus, atque consectetur impedit, porro
-        excepturi vero illo eligendi velit unde repellendus eum ea?
-       </p>
-      </li>
-      <li class="cv-list mt-40">
-       <h3><b>lorem</b> / Lorem, ipsum dolor sit</h3>
-
-       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere tenetur
-        cumque quo qui earum deserunt ut natus, atque consectetur impedit, porro
-        excepturi vero illo eligendi velit unde repellendus eum ea?
-       </p>
-      </li>
-     </ul>
-    </div>
-    <!--END ITEM 1 -->
-
-    <!-- ITEM 2 -->
-    <div class="cv-item cv-item-dark">
-     <div class="cv-title">
-      <div class="icon">
-       <div class="cv-icon-hexagon">
-        <i class="las la-chart-pie"></i>
-       </div>
-      </div>
-      <div class="cv-title-name">
-       <h3><b>professional skills</b></h3>
-      </div>
-      <div class="cv-line"></div>
-     </div>
-
-     <ul class="cv-main flex-row">
-      <div>
-       <li class="cv-list">
-        <div class="flex-row">
-         NETWORKING
-         <div class="progress-bar percent-80"></div>
-        </div>
-       </li>
-       <li class="cv-list">
-        <div class="flex-row">
-         WEB PROGRAMMER
-         <div class="progress-bar percent-50"></div>
-        </div>
-       </li>
-       <li class="cv-list">
-        <div class="flex-row">
-         BRANDING
-         <div class="progress-bar percent-100"></div>
-        </div>
-       </li>
-      </div>
-      <div>
-       <li class="cv-list">
-        <div class="flex-row">
-         GRAPHIC DESIGN
-         <div class="progress-bar percent-80"></div>
-        </div>
-       </li>
-       <li class="cv-list">
-        <div class="flex-row">
-         INTERFACE DESIGN
-         <div class="progress-bar percent-90"></div>
-        </div>
-       </li>
-       <li class="cv-list">
-        <div class="flex-row">
-         SEO
-         <div class="progress-bar percent-60"></div>
-        </div>
-       </li>
-      </div>
-     </ul>
-    </div>
-    <!-- END ITEM 2 -->
-
-    <!-- ITEM 3 -->
-    <div class="cv-item cv-item-dark">
-     <div class="cv-title">
-      <div class="icon">
-       <div class="cv-icon-hexagon">
-        <i class="las la-university"></i>
-       </div>
-      </div>
-      <div class="cv-title-name">
-       <h3><b>education</b></h3>
-      </div>
-      <div class="cv-line"></div>
-     </div>
-
-     <ul class="cv-main">
-      <li class="cv-list">
-       <h3><b>master degree</b> / 2020-2024</h3>
-       <p>
-        <b>Ho Chi Minh City University of Agriculture and Forestry </b>
-       </p>
-      </li>
-      <li class="cv-list mt-40">
-       <h3><b>lorem</b> / Lorem, ipsum dolor sit</h3>
-       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere tenetur
-        cumque quo qui earum deserunt ut natus, atque consectetur impedit, porro
-        excepturi vero illo eligendi velit unde repellendus eum ea?
-       </p>
-      </li>
-      <li class="cv-list mt-40">
-       <h3><b>lorem</b> / Lorem, ipsum dolor sit</h3>
-       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere tenetur
-        cumque quo qui earum deserunt ut natus, atque consectetur impedit, porro
-        excepturi vero illo eligendi velit unde repellendus eum ea?
-       </p>
-      </li>
-      <li class="cv-list mt-40">
-       <h3><b>lorem</b> / Lorem, ipsum dolor sit</h3>
-       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere tenetur
-        cumque quo qui earum deserunt ut natus, atque consectetur impedit, porro
-        excepturi vero illo eligendi velit unde repellendus eum ea?
-       </p>
-      </li>
-     </ul>
-    </div>
-    <!-- END ITEM 3 -->
-
-    <!-- ITEM 4 -->
-    <div class="cv-item cv-item-dark">
-     <div class="cv-title">
-      <div class="icon">
-       <div class="cv-icon-hexagon">
-        <i class="las la-lightbulb"></i>
-       </div>
-      </div>
-      <div class="cv-title-name">
-       <h3><b>proficiency</b></h3>
-      </div>
-      <div class="cv-line"></div>
-     </div>
-
-     <ul class="cv-main flex-row">
-      <div>
-       <li class="cv-list">
-        <div class="flex-row">
-         HTML
-         <div class="progress-bar percent-80"></div>
-        </div>
-       </li>
-       <li class="cv-list">
-        <div class="flex-row">
-         JAVASCRIPT
-         <div class="progress-bar percent-50"></div>
-        </div>
-       </li>
-       <li class="cv-list">
-        <div class="flex-row">
-         DESIGN
-         <div class="progress-bar percent-100"></div>
-        </div>
-       </li>
-       <li class="cv-list">
-        <div class="flex-row">
-         DREAMWEAVER
-         <div class="progress-bar percent-70"></div>
-        </div>
-       </li>
-      </div>
-      <div>
-       <li class="cv-list">
-        <div class="flex-row">
-         CSS
-         <div class="progress-bar percent-80"></div>
-        </div>
-       </li>
-       <li class="cv-list">
-        <div class="flex-row">
-         PHOTOSHOP
-         <div class="progress-bar percent-90"></div>
-        </div>
-       </li>
-       <li class="cv-list">
-        <div class="flex-row">
-         ILLUSTRATOR
-         <div class="progress-bar percent-60"></div>
-        </div>
-       </li>
-       <li class="cv-list">
-        <div class="flex-row">
-         WORDPRESS
-         <div class="progress-bar percent-60"></div>
-        </div>
-       </li>
-      </div>
-     </ul>
-    </div>
-    <!-- END ITEM 4 -->
-   </div>
-   <!--    END RIGHT-->
-  </div>
-  <!-- END CV -->
- </body>
+    <!-- END CV -->
+  </body>
 </html>
